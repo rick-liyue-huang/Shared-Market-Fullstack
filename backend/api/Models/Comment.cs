@@ -19,14 +19,5 @@ namespace api.Models
 
     public DateTime CreatedOn { get; set; } = DateTime.Now;
 
-
-
-
-
-
-
-
-
-
   }
 }
