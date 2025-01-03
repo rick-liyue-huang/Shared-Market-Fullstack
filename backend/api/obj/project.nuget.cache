@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "yCetXn6gDsuzysYnTeqaU6Z9FrkSW9DFq5jRaG3tBHBp7SE6+NWZx0c7+RCvvz6TgXeyaZQn5Zj7agFg3t+V8Q==",
+  "success": true,
+  "projectFilePath": "/Users/rickhuang668/Projects/Shared-Market-Fullstack/backend/api/api.csproj",
+  "expectedPackageFiles": [
+    "/Users/rickhuang668/.nuget/packages/microsoft.aspnetcore.openapi/8.0.10/microsoft.aspnetcore.openapi.8.0.10.nupkg.sha512",
+    "/Users/rickhuang668/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/rickhuang668/.nuget/packages/microsoft.openapi/1.6.14/microsoft.openapi.1.6.14.nupkg.sha512",
+    "/Users/rickhuang668/.nuget/packages/swashbuckle.aspnetcore/6.6.2/swashbuckle.aspnetcore.6.6.2.nupkg.sha512",
+    "/Users/rickhuang668/.nuget/packages/swashbuckle.aspnetcore.swagger/6.6.2/swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",
+    "/Users/rickhuang668/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.6.2/swashbuckle.aspnetcore.swaggergen.6.6.2.nupkg.sha512",
+    "/Users/rickhuang668/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.6.2/swashbuckle.aspnetcore.swaggerui.6.6.2.nupkg.sha512"
+  ],
+  "logs": []
+}
