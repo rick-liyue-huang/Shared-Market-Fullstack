@@ -13,3 +13,5 @@ One fullstack project for a shared marketplace, created by ReactJS and DotNet We
 `dotnet ef migrations add init`
 
 `dotnet ef database update`
+
+'Code to an abstraction(interface)'
