@@ -2,7 +2,9 @@
 
 One fullstack project for a shared marketplace, created by ReactJS and DotNet Web API.
 
-`docker run --name postgres -e POSTGRES_PASSWORD=ABCabc123! -p 5431:5432 -d postgres`
+`docker pull mcr.microsoft.com/azure-sql-edge`
+
+`docker run -e 'ACCEPT_EULA=1' -e 'MSSQL_SA_PASSWORD=ABCabc666' -p 1433:1433 --name sqlserver -d mcr.microsoft.com/azure-sql-edge`
 
 `dotnet tool install --global dotnet-ef --version 8.0.11`
 
