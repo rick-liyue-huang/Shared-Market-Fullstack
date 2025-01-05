@@ -12,7 +12,7 @@ One fullstack project for a shared marketplace, created by ReactJS and DotNet We
 
 `dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL --version 8.0.11`
 
-`dotnet ef migrations add init`
+`dotnet ef migrations add Init`
 
 `dotnet ef database update`
 

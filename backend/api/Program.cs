@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using api.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+builder.Services.AddDbContext<ApplicationDBContext>(options =>
+{
+  options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
 
 var app = builder.Build();
 
