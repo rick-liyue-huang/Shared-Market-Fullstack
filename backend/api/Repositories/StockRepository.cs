@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using api.Interfaces;
 using api.Models;
 using api.DTOs.Stock;
+using api.DTOs.Comment;
 using api.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,12 +22,12 @@ namespace api.Repositories
 
     public async Task<List<Stock>> GetAllAsync()
     {
-      return await _context.Stocks.ToListAsync();
+      return await _context.Stocks.Include(s => s.Comments).ToListAsync();
     }
 
     public async Task<Stock?> GetByIdAsync(int id)
     {
-      return await _context.Stocks.FindAsync(id);
+      return await _context.Stocks.Include(s => s.Comments).FirstOrDefaultAsync(s => s.Id == id);
     }
 
     public async Task<Stock> CreateAsync(Stock stock)
@@ -66,6 +67,12 @@ namespace api.Repositories
       _context.Stocks.Remove(stock);
       await _context.SaveChangesAsync();
       return stock;
+    }
+
+
+    public async Task<bool> StockExistsAsync(int id)
+    {
+      return await _context.Stocks.AnyAsync(s => s.Id == id);
     }
   }
 }

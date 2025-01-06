@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using api.Data;
 using api.Interfaces;
 using api.Repositories;
+using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
 builder.Services.AddControllers(); // for .net web api mvc 
+
+builder.Services.AddControllers().AddNewtonsoftJson(options =>
+{
+  options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+});
+
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -20,6 +28,7 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
 });
 
 builder.Services.AddScoped<IStockRepository, StockRepository>(); // add services to the container
+builder.Services.AddScoped<ICommentRepository, CommentRepository>(); // add services to the container
 
 var app = builder.Build();
 
