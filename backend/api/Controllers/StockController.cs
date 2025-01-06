@@ -9,6 +9,7 @@ using api.Models;
 using api.Mappers;
 using api.DTOs.Stock;
 using api.Interfaces;
+using api.Helpers;
 
 namespace api.Controllers
 {
@@ -27,7 +28,7 @@ namespace api.Controllers
 
     // GET: api/stock
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public async Task<IActionResult> GetAll([FromQuery] QueryObject query)
     {
       // var stocks = await _context.Stocks.ToListAsync();
       // var stocksDTO = stocks.Select(s => s.ToStockDto());
@@ -37,7 +38,7 @@ namespace api.Controllers
         return BadRequest(ModelState);
       }
 
-      var stocks = await _stockRepository.GetAllAsync();
+      var stocks = await _stockRepository.GetAllAsync(query);
       var stocksDTO = stocks.Select(s => StockMappers.ToStockDto(s));
       return Ok(stocksDTO);
     }

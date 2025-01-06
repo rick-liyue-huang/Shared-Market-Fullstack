@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using api.Data;
 using api.Interfaces;
 using api.Repositories;
-using Newtonsoft.Json;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +14,7 @@ builder.Services.AddControllers(); // for .net web api mvc
 
 builder.Services.AddControllers().AddNewtonsoftJson(options =>
 {
-  options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+  options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 });
 
 

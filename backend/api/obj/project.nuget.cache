@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jQWXRs+HTF1sX8n+fS+lfrdGjlGCj6dbz9ujvPPkaQGd5rpGwT7xXeTlUMHgNvHyTxJdk5v5crK32yiMp8AMcg==",
+  "dgSpecHash": "xxMmXoMo00BdIDPUcfzCd6aezasN/MfxQt7UuksjLMe8NAEu/jjv/41HVxNJTVU1kXFfKFF83GTY17etIIGgTg==",
   "success": true,
   "projectFilePath": "/Users/rickhuang668/Projects/Shared-Market-Fullstack/backend/api/api.csproj",
   "expectedPackageFiles": [
@@ -62,7 +62,6 @@
     "/Users/rickhuang668/.nuget/packages/system.clientmodel/1.0.0/system.clientmodel.1.0.0.nupkg.sha512",
     "/Users/rickhuang668/.nuget/packages/system.codedom/4.4.0/system.codedom.4.4.0.nupkg.sha512",
     "/Users/rickhuang668/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
-    "/Users/rickhuang668/.nuget/packages/system.componentmodel.annotations/5.0.0/system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "/Users/rickhuang668/.nuget/packages/system.composition/6.0.0/system.composition.6.0.0.nupkg.sha512",
     "/Users/rickhuang668/.nuget/packages/system.composition.attributedmodel/6.0.0/system.composition.attributedmodel.6.0.0.nupkg.sha512",
     "/Users/rickhuang668/.nuget/packages/system.composition.convention/6.0.0/system.composition.convention.6.0.0.nupkg.sha512",
