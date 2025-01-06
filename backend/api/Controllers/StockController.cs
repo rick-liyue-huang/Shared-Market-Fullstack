@@ -32,16 +32,27 @@ namespace api.Controllers
       // var stocks = await _context.Stocks.ToListAsync();
       // var stocksDTO = stocks.Select(s => s.ToStockDto());
 
+      if (!ModelState.IsValid)
+      {
+        return BadRequest(ModelState);
+      }
+
       var stocks = await _stockRepository.GetAllAsync();
       var stocksDTO = stocks.Select(s => StockMappers.ToStockDto(s));
       return Ok(stocksDTO);
     }
 
     // GET: api/stock/5
-    [HttpGet("{id}")]
+    [HttpGet("{id:int}")]
     public async Task<IActionResult> GetById([FromRoute] int id)
     {
       // var stock = await _context.Stocks.FindAsync(id);
+
+      if (!ModelState.IsValid)
+      {
+        return BadRequest(ModelState);
+      }
+
       var stock = await _stockRepository.GetByIdAsync(id);
 
       if (stock == null)
@@ -55,6 +66,12 @@ namespace api.Controllers
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateStockRequestDto stockDto)
     {
+
+      if (!ModelState.IsValid)
+      {
+        return BadRequest(ModelState);
+      }
+
       var stockModel = stockDto.ToStockFromCreateStockRequestDto();
       // await _context.Stocks.AddAsync(stockModel);
       // await _context.SaveChangesAsync();
@@ -64,10 +81,16 @@ namespace api.Controllers
 
     // PUT: api/stock/5
     [HttpPut]
-    [Route("{id}")]
+    [Route("{id:int}")]
     public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateStockRequestDto stockDto)
     {
       // var stockModel = await _context.Stocks.FirstOrDefaultAsync(s => s.Id == id);
+
+      if (!ModelState.IsValid)
+      {
+        return BadRequest(ModelState);
+      }
+
       var stockModel = await _stockRepository.UpdateAsync(id, stockDto);
       if (stockModel == null)
       {
@@ -86,7 +109,7 @@ namespace api.Controllers
 
     // DELETE: api/stock/5
     [HttpDelete]
-    [Route("{id}")]
+    [Route("{id:int}")]
     public async Task<IActionResult> Delete([FromRoute] int id)
     {
       // var stock = await _context.Stocks.FirstOrDefaultAsync(s => s.Id == id);
@@ -94,6 +117,11 @@ namespace api.Controllers
       // {
       //   return NotFound();
       // }
+
+      if (!ModelState.IsValid)
+      {
+        return BadRequest(ModelState);
+      }
 
       var stock = await _stockRepository.DeleteAsync(id);
       // _context.Stocks.Remove(stock);
